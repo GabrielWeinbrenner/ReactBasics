@@ -5,7 +5,7 @@ import Spinner from './Spinner';
 class App extends React.Component {
     constructor(props){
         super(props);
-        this.state = { lat: 40, errorMessage: ''};
+        this.state = { lat: null, errorMessage: ''};
     }
     componentDidMount(){
         window.navigator.geolocation.getCurrentPosition(
