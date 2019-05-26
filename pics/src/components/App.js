@@ -2,6 +2,12 @@ import React from 'react';
 import SearchBar from './SearchBar';
 import unsplash from '../api/unsplash';
 import ImageList from './ImageList';
+/*
+What we learned about: 
+Event handlers and attaining information from forms-- We learned about handling this situations 
+we can handle it with an arrow function 
+With the prop system we can only communicate with a parent to a child 
+*/
 class App extends React.Component {
 	state = { images: [] };
 	//Different ways to solve context issues
@@ -22,7 +28,7 @@ class App extends React.Component {
 	render(){
 		return (
 			<div className="ui container" style={{marginTop: '10px'}}> 
-				<SearchBar onSubmit={this.onSearchSubmit} />
+				<SearchBar whenSubmit={this.onSearchSubmit} />
 				<ImageList images={this.state.images}/>
 			</div>
 		);

@@ -7,17 +7,20 @@ class SearchBar extends React.Component {
     };
     onFormSubmit(event){
         event.preventDefault();
-        this.props.onSubmit(this.state.term);
+        console.log(this.state.term);
+        // Once the form is submitted this calls the function whenSubmit
+        this.props.whenSubmit(this.state.term);
     }
     render(){
         return (
             <div className="ui segment">
-                <form onSubmit={(event) => this.onFormSubmit(event)} className="ui form">
+                <form onSubmit={(event) =>{ console.log(event); this.onFormSubmit(event)}} className="ui form">
                         <div className="field">
                             <label>Image Search</label>
                             <input type="text" 
                                 value = {this.state.term} 
-                                onChange={(e) => this.setState({ term: e.target.value })}
+                                //Continously establishes the term everytime it changes
+                                onChange= {(e) => {console.log(this.state.term); this.setState({ term: e.target.value })}}
                              />
                         </div>
                 </form>
